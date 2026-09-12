@@ -1,0 +1,11 @@
+[Unit]
+Description=qBittorrent (headless), profile in __REPO_DIR__
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/qbittorrent-nox --profile=__REPO_DIR__/profile --webui-port=8080
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
